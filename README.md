@@ -2,7 +2,8 @@
 
 ### Prerequisites
 
-Install ansible-playbook (`sudo apt install ansible`)
+Install ansible-playbook (`sudo apt install ansible`) locally or use
+[gitpod.io/#https://github.com/raphael-systemticks/ansible-playground](gitpod.io/#https://github.com/raphael-systemticks/ansible-playground) to use it within gitpod. 
 
 ### Conditional hello world test
 
