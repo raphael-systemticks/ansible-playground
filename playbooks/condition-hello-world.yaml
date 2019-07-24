@@ -1,0 +1,15 @@
+- hosts:
+  - local
+  vars_files:
+    - ../vars/var_defs.yaml
+  tasks:
+  - set_fact:
+      is_active: "{{ my_var == \"A\" or my_var == \"B\" }}"
+  - name: "Print on condition true"
+    debug:
+      msg: "Active"
+    when: is_active
+  - name: "Print on condition false"
+    debug:
+      msg: "Not Active"
+    when: not is_active
