@@ -1,1 +1,2 @@
 my_var: "A"
+my_cond: "{{ my_var == \"A\" or my_var == \"B\" }}"
