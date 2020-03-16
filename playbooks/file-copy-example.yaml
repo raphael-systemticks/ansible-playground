@@ -1,0 +1,22 @@
+- hosts:
+  - local
+  vars:
+    src_dir: "src"
+    target_dir: "target"
+  tasks:
+  - name: Clean target folder
+    file:
+      state: absent
+      path: "{{ target_dir }}/"
+  - name: Creates directory
+    file:
+      path: "{{ target_dir }}/"
+      state: directory
+  - name: "Copy multiple files with pattern"
+    shell: |
+      for item in '{{ src_dir }}/hello-*-01.txt' \
+                  '{{ src_dir }}/hello-*-02.txt' \
+                  '{{ src_dir }}/hello-*-3.txt'
+      do
+        cp $item {{ target_dir }}
+      done
